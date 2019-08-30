@@ -4,8 +4,6 @@ import 'package:movie_traliers/bloc/discover_bloc.dart';
 import 'package:movie_traliers/model/discover_model.dart';
 import 'package:movie_traliers/model/genre_model.dart';
 import 'package:movie_traliers/pages/categories/category_movie_detail.dart';
-import 'package:movie_traliers/pages/home/movie_details.dart';
-import 'package:movie_traliers/pages/home_app_bar.dart';
 import 'package:movie_traliers/ui/loader.dart';
 import 'package:movie_traliers/ui/theme_ui.dart';
 
