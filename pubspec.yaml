@@ -29,6 +29,7 @@ dependencies:
   intl: ^0.15.8
   youtube_player: ^3.5.0
   palette_generator: ^0.2.0
+  # flutter_launcher_icons: ^0.7.2+1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -37,6 +38,11 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  # flutter_icons:
+  #   android: "launcher_icon" 
+  #   ios: true
+  #   image_path: "assets/icons/launcher_icon.png"
 
 
 # For information on the generic Dart part of this file, see the
