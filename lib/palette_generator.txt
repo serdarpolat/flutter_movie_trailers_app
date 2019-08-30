@@ -1,0 +1,13 @@
+
+  PaletteGenerator paletteGenerator;
+
+  Future<PaletteGenerator> generatePalette(String img) async {
+    paletteGenerator = await PaletteGenerator.fromImageProvider(
+      AssetImage(img),
+      size: Size(110, 150),
+      maximumColorCount: 20,
+    );
+    setState(() {});
+
+    return paletteGenerator;
+  }
