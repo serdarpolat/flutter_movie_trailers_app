@@ -17,6 +17,8 @@ class Repository {
       movieApiProvider.fetchTrailers(movieId);
   Future<CreditsModel> fetchcredits(int movieId) =>
       movieApiProvider.fetchCredits(movieId);
-  Future<DiscoverModel> fetchAllDiscoverMovies(String genreId) =>
-      movieApiProvider.fetchMovieByGenre(genreId);
+  Future<DiscoverModel> fetchAllDiscoverPopularMovies(String genreId) =>
+      movieApiProvider.fetchMovieByGenrePopular(genreId, true);
+  Future<DiscoverModel> fetchAllDiscoverLatestMovies(String genreId) =>
+      movieApiProvider.fetchMovieByGenrePopular(genreId, false);
 }

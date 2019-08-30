@@ -4,7 +4,7 @@ final Color bgColor = Color(0xff191C21);
 final Color accentColor = Color(0xffFEC337);
 final Color whiteColor = Color(0xffE0E0E0);
 
-Widget header(String title) {
+Widget header(String title, bool hasSeeAll) {
   return Padding(
     padding: const EdgeInsets.only(top: 36, bottom: 20, left: 24),
     child: Row(
@@ -21,6 +21,7 @@ Widget header(String title) {
             letterSpacing: 1.1,
           ),
         ),
+        hasSeeAll ? 
         GestureDetector(
           onTap: () {},
           child: Container(
@@ -43,7 +44,26 @@ Widget header(String title) {
               ),
             ),
           ),
-        ),
+        ) : Container(
+            decoration: BoxDecoration(
+              color: Colors.transparent,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(24),
+                bottomLeft: Radius.circular(24),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Text(
+                'See All',
+                style: TextStyle(
+                    color: Colors.transparent,
+                    letterSpacing: 1.2,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
       ],
     ),
   );

@@ -12,7 +12,6 @@ import 'package:movie_traliers/pages/user_page.dart';
 import 'package:movie_traliers/pages/videos_page.dart';
 import 'package:movie_traliers/ui/loader.dart';
 import 'package:movie_traliers/ui/theme_ui.dart';
-import 'package:palette_generator/palette_generator.dart';
 
 class Stream1 extends StatefulWidget {
   @override

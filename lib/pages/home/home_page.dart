@@ -41,12 +41,12 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     // HomeAppBar(),
-                    header('Now Playing'),
+                    header('Now Playing', true),
                     NowPlayingMovies(
                       snapshotItem: widget.snapshotItem,
                       snapshotGenres: widget.snapshotGenres,
                     ),
-                    header('Popular'),
+                    header('Popular', true),
                     PopularMovies(
                       snapshotGenres: widget.snapshotGenres,
                       snapshotPopular: widget.snapshotPopular,

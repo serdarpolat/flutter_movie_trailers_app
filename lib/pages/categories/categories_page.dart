@@ -9,7 +9,8 @@ class CategoriesPage extends StatefulWidget {
   final AsyncSnapshot<GenreModel> snapshotGenres;
   final AsyncSnapshot<ItemModel> snapshotItem;
 
-  const CategoriesPage({Key key, this.snapshotGenres, this.snapshotItem}) : super(key: key);
+  const CategoriesPage({Key key, this.snapshotGenres, this.snapshotItem})
+      : super(key: key);
   @override
   _CategoriesPageState createState() => _CategoriesPageState();
 }
@@ -94,63 +95,74 @@ class _CategoriesPageState extends State<CategoriesPage> {
         backgroundColor: bgColor,
         body: Container(
           width: screenSize.width,
-          // height: screenSize.height,
-          padding: EdgeInsets.only(top: 124, left: 24, right: 24, bottom: 24),
+          padding: EdgeInsets.only(top: 80),
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Wrap(
-              spacing: 15,
-              runSpacing: 15,
-              children: List<Widget>.generate(data.genres.length, (index) {
-                return InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CategoryList(
-                          genreId: data.genres[index].getId.toString(),
-                        ),
-                      ),
-                    );
-                    print(data.genres[index].getId.toString());
-                  },
-                  child: Stack(
-                    children: <Widget>[
-                      Container(
-                        width: (screenSize.width - 68) / 2,
-                        height: (screenSize.width - 68) / 2 * (3 / 4),
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(imgPaths[index]),
-                            fit: BoxFit.cover,
+              physics: BouncingScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                children: <Widget>[
+                  header('Categories', false),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24.0, right: 24),
+                    child: Wrap(
+                      spacing: 15,
+                      runSpacing: 15,
+                      children:
+                          List<Widget>.generate(data.genres.length, (index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CategoryList(
+                                  genreId: data.genres[index].getId.toString(),
+                                  headerText: data.genres[index].getName.toString(),
+                                  snapshotGenres: widget.snapshotGenres,
+                                ),
+                              ),
+                            );
+                            print(data.genres[index].getId.toString());
+                          },
+                          child: Stack(
+                            children: <Widget>[
+                              Container(
+                                width: (screenSize.width - 68) / 2,
+                                height: (screenSize.width - 68) / 2 * (3 / 4),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(imgPaths[index]),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                              ),
+                              Container(
+                                width: (screenSize.width - 68) / 2,
+                                height: (screenSize.width - 68) / 2 * (3 / 4),
+                                decoration: BoxDecoration(
+                                  color: bgColors[index].withOpacity(0.8),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    data.genres[index].getName,
+                                    style: TextStyle(
+                                      color: Colors.white70,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                      ),
-                      Container(
-                        width: (screenSize.width - 68) / 2,
-                        height: (screenSize.width - 68) / 2 * (3 / 4),
-                        decoration: BoxDecoration(
-                          color: bgColors[index].withOpacity(0.8),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Center(
-                          child: Text(
-                            data.genres[index].getName,
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                        );
+                      }),
+                    ),
                   ),
-                );
-              }),
-            ),
-          ),
+                ],
+              )),
         ),
       ),
     );

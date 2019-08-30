@@ -9,8 +9,8 @@ class DiscoverBloc {
   Observable<DiscoverModel> get allDiscoverMovies =>
       discoverMoviesFetcher.stream;
 
-  fetchAllDiscoverMoviesMovies(String genreId) async {
-    DiscoverModel discoverModel = await repository.fetchAllDiscoverMovies(genreId);
+  fetchAllDiscoverMovies(String genreId, bool isPopular) async {
+    DiscoverModel discoverModel = isPopular ? await repository.fetchAllDiscoverPopularMovies(genreId) : await repository.fetchAllDiscoverLatestMovies(genreId);
     discoverMoviesFetcher.sink.add(discoverModel);
   }
 

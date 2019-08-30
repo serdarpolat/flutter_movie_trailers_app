@@ -70,11 +70,21 @@ class MovieApiProvider {
     }
   }
 
-  Future<DiscoverModel> fetchMovieByGenre(String genreId) async {
+  Future<DiscoverModel> fetchMovieByGenrePopular(String genreId, bool isPopular) async {
     final response = await client.get('https://api.themoviedb.org/3/discover/movie?api_key=$apiKey&sort_by=popularity.desc&page_1&with_genres=$genreId');
 
     if (response.statusCode == 200) {
-      return DiscoverModel.fromJson(json.decode(response.body));
+      return DiscoverModel.fromJson(json.decode(response.body), isPopular);
+    } else {
+      throw Exception('Failed to load discover movies');
+    }
+  }
+
+  Future<DiscoverModel> fetchMovieByGenreLatest(String genreId, bool isPopular) async {
+    final response = await client.get('https://api.themoviedb.org/3/discover/movie?api_key=$apiKey&sort_by=popularity.desc&page_1&with_genres=$genreId');
+
+    if (response.statusCode == 200) {
+      return DiscoverModel.fromJson(json.decode(response.body), isPopular);
     } else {
       throw Exception('Failed to load discover movies');
     }

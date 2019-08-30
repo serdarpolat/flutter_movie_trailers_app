@@ -23,7 +23,7 @@ class _GetMoviesState extends State<GetMovies> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        header(widget.header),
+        header(widget.header, true),
         StreamBuilder(
           stream: widget.itemModel,
           builder: (context, AsyncSnapshot<ItemModel> snapshot) {

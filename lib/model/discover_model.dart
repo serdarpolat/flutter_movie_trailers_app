@@ -4,28 +4,32 @@ class DiscoverModel {
   int page;
   int totalPages;
   int totalResults;
-  List<Result> results = [];
+  List<ResultDiscover> results = [];
 
-  DiscoverModel.fromJson(Map<String, dynamic> parsedJson) {
+  DiscoverModel.fromJson(Map<String, dynamic> parsedJson, bool isPopular) {
     if (parsedJson['results'] != null) {
       page = parsedJson['page'];
       totalPages = parsedJson['total_pages'];
       totalResults = parsedJson['total_results'];
-      List<Result> temp = [];
+      List<ResultDiscover> temp = [];
 
       for (var i = 0; i < parsedJson['results'].length; i++) {
-        Result result = Result(parsedJson['results'][i]);
+        ResultDiscover result = ResultDiscover(parsedJson['results'][i]);
         temp.add(result);
       }
 
-      temp.sort((a,b) => b.voteAverage.compareTo(a.voteAverage));
+      if(isPopular) {
+        temp.sort((a,b) => b.voteAverage.compareTo(a.voteAverage));
+      } else {
+        temp.sort((a,b) => b.releaseDate.compareTo(a.releaseDate));
+      }
 
       results = temp;
     }
   }
 }
 
-class Result {
+class ResultDiscover {
   int voteCount;
   int id;
   bool video;
@@ -39,9 +43,9 @@ class Result {
   String backdropPath;
   bool adult;
 
-  String fakeImgPath = 'https://via.placeholder.com/600x800.png';
+  String fakeImgPath = 'https://raw.githubusercontent.com/serdarpolat/flutter_movie_trailers_app/master/assets/images/no_image.jpg';
 
-  Result(results) {
+  ResultDiscover(results) {
     voteCount = results['vote_count'];
     id = results['id'];
     video = results['video'];
