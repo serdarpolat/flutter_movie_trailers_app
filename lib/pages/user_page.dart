@@ -19,12 +19,29 @@ class _UserPageState extends State<UserPage> {
         backgroundColor: bgColor,
         body: Container(
           child: Center(
-            child: Text(
-              'User Page',
-              style: TextStyle(
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
-                color: accentColor,
+            child: Container(
+              height: MediaQuery.of(context).size.height / 2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'User Page',
+                    style: TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                      color: accentColor,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    "'Still Coding'",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white70,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

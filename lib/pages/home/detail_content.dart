@@ -23,6 +23,9 @@ class DetailContent extends StatefulWidget {
 }
 
 class _DetailContentState extends State<DetailContent> {
+  bool isLiked = false;
+  IconData heartIcon = EvaIcons.heartOutline;
+
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
@@ -48,9 +51,13 @@ class _DetailContentState extends State<DetailContent> {
           ),
           actions: <Widget>[
             IconButton(
-              onPressed: () {},
-              icon: Icon(EvaIcons.heartOutline),
-              color: accentColor,
+              onPressed: () {
+                setState(() {
+                  isLiked = !isLiked;
+                });
+              },
+              icon: Icon(isLiked ? EvaIcons.heart : EvaIcons.heartOutline),
+              color: isLiked ? Colors.redAccent : accentColor,
             ),
           ],
           floating: true,
