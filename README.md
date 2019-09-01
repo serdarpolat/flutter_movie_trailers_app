@@ -3,7 +3,6 @@
 <img src="screens/Screenshot_20190831-003021.jpg" width="540" />
 
 # Home
-<img src="screens/Screenshot_20190823-215114.jpg" width="540" />
 <img src="screens/Screenshot_20190831-002857.jpg" width="540" />
 <img src="screens/Screenshot_20190831-002906.jpg" width="540" />
 
