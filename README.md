@@ -1,4 +1,19 @@
-# movie_traliers
+# Screens
+# Opening
+<img src="screens/Screenshot_20190831-003021.jpg" width="540" />
+
+# Home
+<img src="screens/Screenshot_20190823-215114.jpg" width="540" />
+<img src="screens/Screenshot_20190831-002857.jpg" width="540" />
+<img src="screens/Screenshot_20190831-002906.jpg" width="540" />
+
+# Detail
+<img src="screens/Screenshot_20190831-002918.jpg" width="540" />
+<img src="screens/Screenshot_20190831-002926.jpg" width="540" />
+
+# Categories
+<img src="screens/Screenshot_20190831-002935.jpg" width="540" />
+<img src="screens/Screenshot_20190831-002950.jpg" width="540" />
 
 A new Flutter project.
 
