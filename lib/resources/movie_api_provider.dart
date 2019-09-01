@@ -12,7 +12,7 @@ final nowPlayingUrl =
 final popularUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=';
 final baseUrl = 'https://api.themoviedb.org/3/movie/';
 final genresUrl = 'https://api.themoviedb.org/3/genre/movie/list?api_key=';
-final apiKey = '1bb6d4935d683e27f590016db6031abe';
+final apiKey = '';
 final baseImageUrl = 'https://image.tmdb.org/t/p/w500/';
 final creditsUrl = 'https://api.themoviedb.org/3/movie/'; //420818/credits?api_key=
 
