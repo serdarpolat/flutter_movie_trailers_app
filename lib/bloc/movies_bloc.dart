@@ -6,7 +6,7 @@ class MoviesBloc {
   final repository = Repository();
   final movieNowPlayingFetcher = PublishSubject<ItemModel>();
 
-  Observable<ItemModel> get allNowPlayingMovies =>
+  Stream<ItemModel> get allNowPlayingMovies =>
       movieNowPlayingFetcher.stream;
 
   fetchAllNowPlayingMovies() async {

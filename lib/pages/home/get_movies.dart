@@ -3,11 +3,9 @@ import 'package:movie_traliers/model/item_model.dart';
 import 'package:movie_traliers/pages/home/items_load.dart';
 import 'package:movie_traliers/ui/loader.dart';
 import 'package:movie_traliers/ui/theme_ui.dart';
-import 'package:rxdart/rxdart.dart';
-
 class GetMovies extends StatefulWidget {
   final dynamic itemType;
-  final Observable<ItemModel> itemModel;
+  final Stream<ItemModel> itemModel;
   final String header;
   final int id;
 
