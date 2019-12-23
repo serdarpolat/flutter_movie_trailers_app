@@ -26,6 +26,7 @@ class MovieApiProvider {
     if (response.statusCode == 200) {
       return ItemModel.fromJson(json.decode(response.body), isPopular);
     } else {
+      
       throw Exception('Failed to load new movies');
     }
   }

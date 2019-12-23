@@ -6,7 +6,7 @@ class TrailerBloc {
   final repository = Repository();
   final trailerFetcher = PublishSubject<TrailerModel>();
 
-  Observable<TrailerModel> get allTrailersOfMovie =>
+  Stream<TrailerModel> get allTrailersOfMovie =>
       trailerFetcher.stream;
 
   fetchAllTrailers(int movieId) async {

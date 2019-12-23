@@ -6,7 +6,7 @@ class GenresBloc {
   final repository = Repository();
   final genresFetcher = PublishSubject<GenreModel>();
 
-  Observable<GenreModel> get allGenres => genresFetcher.stream;
+  Stream<GenreModel> get allGenres => genresFetcher.stream;
 
   fetchAllGenres() async {
     GenreModel genreModel = await repository.fetchAllGenres();

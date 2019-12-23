@@ -6,7 +6,7 @@ class DiscoverBloc {
   final repository = Repository();
   final discoverMoviesFetcher = PublishSubject<DiscoverModel>();
 
-  Observable<DiscoverModel> get allDiscoverMovies =>
+  Stream<DiscoverModel> get allDiscoverMovies =>
       discoverMoviesFetcher.stream;
 
   fetchAllDiscoverMovies(String genreId, bool isPopular) async {
